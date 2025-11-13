@@ -75,6 +75,10 @@
   --sidebar-ring: oklch(0.68 0.14 195);
 }
 
+.logged-in {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+
 @theme inline {
   --font-sans: "Geist", "Geist Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
@@ -218,6 +222,19 @@
 
 .animate-rotate-slow {
   animation: rotate 20s linear infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 @layer base {

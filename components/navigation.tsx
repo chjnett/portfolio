@@ -77,11 +77,12 @@ export function Navigation() {
               </a>
             ))}
             {session &&
-              loggedInNavItems.map((item) => (
+              loggedInNavItems.map((item, index) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-foreground/80 hover:text-primary transition-colors relative group"
+                  className={`text-foreground/80 hover:text-primary transition-colors relative group ${index === 0 ? "animate-slide-in-left" : "animate-slide-in-right"}`}
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-cyan-400 group-hover:w-full transition-all duration-300" />
@@ -96,7 +97,7 @@ export function Navigation() {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Button asChild>
-                      <Link href="/test-superbase">로그인</Link>
+                      <Link href="/login">로그인</Link>
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
@@ -127,12 +128,13 @@ export function Navigation() {
               </a>
             ))}
             {session &&
-              loggedInNavItems.map((item) => (
+              loggedInNavItems.map((item, index) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block text-foreground/80 hover:text-primary transition-colors"
+                  className={`block text-foreground/80 hover:text-primary transition-colors ${index === 0 ? "animate-slide-in-left" : "animate-slide-in-right"}`}
                   onClick={() => setIsMobileMenuOpen(false)}
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {item.name}
                 </Link>
@@ -143,7 +145,7 @@ export function Navigation() {
               </Button>
             ) : (
               <Button className="w-full" asChild>
-                <Link href="/test-superbase">로그인</Link>
+                <Link href="/login">로그인</Link>
               </Button>
             )}
           </div>
