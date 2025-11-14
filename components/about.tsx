@@ -53,7 +53,7 @@ export function About() {
           <h2
             className={`text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
-            왜 저를 선택해야 할까요?
+            개발 지식은 필요 없습니다!
           </h2>
           <p
             className={`text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed transition-all duration-700 delay-150 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
