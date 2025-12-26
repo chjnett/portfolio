@@ -45,6 +45,7 @@ export function Navigation() {
     { name: "서비스", href: "#services" },
     { name: "작업 예시", href: "#showcase" },
     { name: "프로젝트", href: "#projects" },
+    { name: "가격", href: "#pricing" },
   ]
 
   const loggedInNavItems = [
@@ -93,18 +94,23 @@ export function Navigation() {
                 로그아웃
               </Button>
             ) : (
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button asChild>
-                      <Link href="/login">로그인</Link>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>로그인을 하시면 오류수정과 Q&A를 하실 수 있습니다.</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+              <div className="flex items-center gap-2">
+                <Button asChild variant="outline">
+                  <a href="#pricing">가격보기</a>
+                </Button>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button asChild>
+                        <Link href="/login">로그인</Link>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>로그인을 하시면 오류수정과 Q&A를 하실 수 있습니다.</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </div>
             )}
           </div>
 
@@ -144,9 +150,14 @@ export function Navigation() {
                 로그아웃
               </Button>
             ) : (
-              <Button className="w-full" asChild>
-                <Link href="/login">로그인</Link>
-              </Button>
+              <div className="flex flex-col gap-2">
+                <Button asChild variant="outline" className="w-full">
+                  <a href="#pricing" onClick={() => setIsMobileMenuOpen(false)}>가격보기</a>
+                </Button>
+                <Button className="w-full" asChild>
+                  <Link href="/login">로그인</Link>
+                </Button>
+              </div>
             )}
           </div>
         )}

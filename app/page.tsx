@@ -4,6 +4,7 @@ import { About } from "@/components/about"
 import { Skills } from "@/components/skills"
 import { RequestShowcase } from "@/components/request-showcase"
 import { Projects } from "@/components/projects"
+import { Pricing } from "@/components/pricing"
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Skills />
       <RequestShowcase />
       <Projects />
+      <Pricing />
     </div>
   )
 }

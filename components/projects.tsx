@@ -11,25 +11,18 @@ import { ExternalLink } from "lucide-react"
 const projects = [
   {
     title: "IT 기업 소개 페이지",
-    description:
-      "미래지향적인 디자인의 IT 기업 웹사이트. 반응형 레이아웃과 동적 애니메이션으로 기업의 혁신성을 강조했습니다.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-n0JbRzp2n0N6VL2h5pk8NrJA1xNBfJ.png",
-    tags: ["웹사이트", "반응형", "미래지향적"],
-    link: "https://v0-company-introduction-website-b0pi0ym5m.vercel.app/",
+    description: "미래지향적인 디자인과 인터랙티브한 애니메이션이 적용된 완성도 높은 웹사이트",
+    image: "/cloudops-intro.png",
+    tags: ["반응형 디자인", "패럴랙스 효과", "부드러운 애니메이션"],
+    link: "https://devops1-eight.vercel.app/",
   },
+
   {
-    title: "쇼핑몰 플랫폼",
-    description: "사용자 친화적인 UI/UX로 구매 전환율을 높인 전자상거래 웹사이트. 결제 시스템과 관리자 페이지 포함.",
-    image: "/ecommerce-platform-concept.png",
-    tags: ["쇼핑몰", "결제", "관리자"],
-    link: "#",
-  },
-  {
-    title: "예약 시스템",
-    description: "실시간 예약 관리가 가능한 웹 서비스. 달력 기능과 알림 시스템으로 편리한 예약 관리를 제공합니다.",
-    image: "/booking-system-concept.jpg",
-    tags: ["예약", "실시간", "알림"],
-    link: "#",
+    title: "소니 헤드폰 소개 페이지",
+    description: "소니의 최신 헤드폰을 소개하는 몰입형 랜딩 페이지. 프리미엄 디자인과 동적인 애니메이션으로 제품의 가치를 효과적으로 전달합니다.",
+    image: "/sony_headphone.png",
+    tags: ["랜딩페이지", "제품소개", "반응형"],
+    link: "https://sony-intro.vercel.app/",
   },
 ]
 
@@ -94,16 +87,15 @@ export function Projects() {
           <p className="text-muted-foreground text-lg">다양한 업종의 클라이언트와 함께한 프로젝트들입니다</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex flex-wrap justify-center gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
               ref={(el) => {
                 projectRefs.current[index] = el
               }}
-              className={`transition-all duration-700 ${
-                visibleProjects[index] ? "opacity-100 translate-y-0 rotate-0" : "opacity-0 translate-y-10 rotate-3"
-              }`}
+              className={`w-full max-w-md transition-all duration-700 ${visibleProjects[index] ? "opacity-100 translate-y-0 rotate-0" : "opacity-0 translate-y-10 rotate-3"
+                }`}
               style={{
                 transitionDelay: `${index * 100}ms`,
                 animation: visibleProjects[index]
